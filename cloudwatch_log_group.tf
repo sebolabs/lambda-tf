@@ -4,6 +4,7 @@ resource "aws_cloudwatch_log_group" "main" {
 
   tags = "${merge(
     var.default_tags,
+    local.tags,
     map(
       "Name", format(
         "%s-%s-%s/%s",
@@ -11,8 +12,7 @@ resource "aws_cloudwatch_log_group" "main" {
         var.environment,
         var.component,
         var.name 
-      ),
-      "Module", var.module
+      )
     )
   )}"
 }

@@ -7,7 +7,7 @@ resource "aws_lambda_function" "main" {
     var.name
   )}"
 
-  description = "${upper(var.component)} ${upper(var.name)} lambda function (${upper(var.environment)} env)"
+  description = "${upper(var.name)} lambda function"
 
   s3_bucket = "${var.s3_bucket}"
   s3_key    = "${var.s3_key}"
@@ -26,6 +26,7 @@ resource "aws_lambda_function" "main" {
 
   tags = "${merge(
     var.default_tags,
+    local.tags,
     map(
       "Name", format(
         "%s-%s-%s-%s",
@@ -33,8 +34,7 @@ resource "aws_lambda_function" "main" {
         var.environment,
         var.component,
         var.name
-      ),
-      "Module", var.module
+      )
     )
   )}"
 }

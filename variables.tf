@@ -1,16 +1,16 @@
 variable "project" {
   type        = "string"
-  description = "The project name"
+  description = "The name of the project"
 }
 
 variable "environment" {
   type        = "string"
-  description = "The environment name"
+  description = "The name of the environment"
 }
 
 variable "component" {
   type        = "string"
-  description = "The component name"
+  description = "The name of the component"
 }
 
 variable "module" {
@@ -21,7 +21,7 @@ variable "module" {
 
 variable "name" {
   type        = "string"
-  description = "The Lambda function name"
+  description = "Name of the Lambda"
 }
 
 variable "s3_bucket" {
@@ -46,17 +46,17 @@ variable "handler" {
 
 variable "memory_size" {
   type        = "string"
-  description = "Amount of memory in MB your Lambda function can use at runtime"
+  description = "Amount of memory in MB your Lambda Function can use at runtime"
 }
 
 variable "timeout" {
   type        = "string"
-  description = "The amount of time your Lambda function has to run in seconds"
+  description = "The amount of time your Lambda Function has to run in seconds"
 }
 
 variable "publish" {
   type        = "string"
-  description = "Whether to publish creation/change as new Lambda function version"
+  description = "Whether to publish creation/change as new Lambda Function Version"
 }
 
 variable "env_variables" {
@@ -79,11 +79,11 @@ variable "invoker_source_arn" {
 
 variable "cwlg_retention_in_days" {
   type        = "string"
-  description = "Lambda CloudWatch logs retention period (in days)"
+  description = ""
 }
 
 variable "default_tags" {
   type        = "map"
-  description = "Default tags to apply to all taggable resources"
+  description = ""
   default     = {}
 }
